@@ -7,11 +7,11 @@ app = Flask(__name__)
 def main():
     if request.method == 'POST':
         mensaje = request.form['mensaje']
-        with open('/app/chat.txt', 'a') as file:
+        with open('/tmp/chat.txt', 'a') as file:
             file.write(mensaje)
         return "ok"
     else:
-        with open('/app/chat.txt') as file:
+        with open('/tmp/chat.txt') as file:
             lines = file.read()
         return lines
 
