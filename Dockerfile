@@ -3,6 +3,7 @@ RUN pip3 install --upgrade pip --trusted-host pypi.python.org --trusted-host pyp
 
 WORKDIR /app
 COPY . /app
+RUN chmod 777 /app/chat.txt
 
 RUN pip3 --no-cache-dir install -r requirements.txt --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org --index-url https://pypi.python.org/simple
 
