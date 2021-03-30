@@ -13,8 +13,8 @@ def main():
             file.write(mensaje)
     else:
         with open('/app/chat.txt') as file:
-            lines = file.readlines()
-        return lines
+            lines = file.read()
+        print(lines)
 
 
 if __name__ == '__main__':  # Script executed directly?
