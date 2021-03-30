@@ -1,4 +1,4 @@
-from alpine:latest
+from python:latest
 RUN apk add --no-cache py3-pip \
     && pip3 install --upgrade pip --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org --index-url https://pypi.python.org/simple
 
