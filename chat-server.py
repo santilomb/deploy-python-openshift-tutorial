@@ -11,10 +11,11 @@ def main():
         mensaje = request.form['mensaje']
         with open('/app/chat.txt', 'a') as file:
             file.write(mensaje)
+        return "ok"
     else:
         with open('/app/chat.txt') as file:
             lines = file.read()
-        print(lines)
+        return lines
 
 
 if __name__ == '__main__':  # Script executed directly?
