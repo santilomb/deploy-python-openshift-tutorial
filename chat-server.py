@@ -18,8 +18,8 @@ def main():
         with open('/app/chat.txt', 'a') as file:
             file.write(mensaje)
     else:
-        with open('filename') as f:
-        lines = f.readlines()
+        with open('/app/chat.txt') as file:
+            lines = file.readlines()
         return lines
 
 
