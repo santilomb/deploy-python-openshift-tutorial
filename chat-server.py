@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/', methods=["GET", "POST"]) 
 def main():
     if not os.path.exists("chat_lines.txt"):
-        os.touch("chat_lines.txt")
+        with open("chat_lines.txt", 'w') as fp:
+            pass
     if request.method == 'POST':
         mensaje = request.form['mensaje']
         with open("chat_lines.txt", 'w+') as file:
