@@ -7,8 +7,8 @@ app = Flask(__name__)    # Construct an instance of Flask class for our webapp
 
 @app.route('/', methods=["GET", "POST"])   # URL '/' to be handled by main() route handler
 def main():
-    if app.request.method == 'POST':
-        mensaje = app.request.values.get('mensaje') # Your form's
+    if request.method == 'POST':
+        mensaje = request.form['mensaje']
         with open('/app/chat.txt', 'a') as file:
             file.write(mensaje)
     else:
