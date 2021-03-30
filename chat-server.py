@@ -1,11 +1,9 @@
 # -*- coding: UTF-8 -*-
-"""
-hello_flask: First Python-Flask webapp
-"""
-from flask import Flask, redirect, url_for, request  # From module flask import class Flask
-app = Flask(__name__)    # Construct an instance of Flask class for our webapp
 
-@app.route('/', methods=["GET", "POST"])   # URL '/' to be handled by main() route handler
+from flask import Flask, redirect, url_for, request 
+app = Flask(__name__)   
+
+@app.route('/', methods=["GET", "POST"]) 
 def main():
     if request.method == 'POST':
         mensaje = request.form['mensaje']
@@ -18,6 +16,6 @@ def main():
         return lines
 
 
-if __name__ == '__main__':  # Script executed directly?
+if __name__ == '__main__':  
     print("Hello World! Built with a Docker file.")
-    app.run(host="0.0.0.0", port=5000, debug=True,use_reloader=True)  # Launch built-in web server and run this Flask webapp
+    app.run(host="0.0.0.0", port=5000, debug=True,use_reloader=True) 
