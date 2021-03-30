@@ -9,4 +9,4 @@ RUN pip3 --no-cache-dir install -r requirements.txt --trusted-host pypi.python.o
 EXPOSE 5000
 
 ENTRYPOINT ["python3"]
-CMD ["helloworld.py"]
+CMD ["chat-server.py"]
