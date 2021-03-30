@@ -1,9 +1,3 @@
-'''
-Created on 04-Sep-2019
-
-@author: bkadambi
-'''
-
 # -*- coding: UTF-8 -*-
 """
 hello_flask: First Python-Flask webapp
@@ -13,8 +7,8 @@ app = Flask(__name__)    # Construct an instance of Flask class for our webapp
 
 @app.route('/', methods=["GET", "POST"])   # URL '/' to be handled by main() route handler
 def main():
-    if flask.request.method == 'POST':
-        mensaje = flask.request.values.get('mensaje') # Your form's
+    if app.request.method == 'POST':
+        mensaje = app.request.values.get('mensaje') # Your form's
         with open('/app/chat.txt', 'a') as file:
             file.write(mensaje)
     else:
