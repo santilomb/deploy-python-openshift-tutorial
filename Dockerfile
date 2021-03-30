@@ -1,6 +1,5 @@
 from rhel8/python-36
-RUN yum install python3 python3-pip \
-    && pip3 install --upgrade pip --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org --index-url https://pypi.python.org/simple
+RUN pip3 install --upgrade pip --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org --index-url https://pypi.python.org/simple
 
 WORKDIR /app
 COPY . /app
