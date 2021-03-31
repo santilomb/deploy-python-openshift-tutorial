@@ -4,22 +4,14 @@ from flask import Flask, redirect, url_for, request
 import os.path
 app = Flask(__name__)   
 
-archivo = "/opt/app-root/src/chat.txt"
-
 @app.route('/', methods=["GET", "POST"]) 
 def main():
-    if not os.path.exists(archivo):
-        with open(archivo, 'w') as fp:
-            fp.write("LISTA DE MENSAJES: \n")
     if request.method == 'POST':
         mensaje = request.form['mensaje']
-        with open(archivo, 'w+') as file:
-            file.write(mensaje)
-        return "ok"
+        return "POST: " + mensaje
     else:
-        with open(archivo) as file:
-            lines = file.read()
-        return lines
+        
+        return "GET: Hola muudo"
 
 
 if __name__ == '__main__':  
